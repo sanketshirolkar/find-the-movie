@@ -5,27 +5,18 @@ import { useNavigate } from 'react-router-dom';
 import "./login.css";
 
 const Login = () => {
-
-    const [name, setName] = useState("");
-    const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    const [credentials, setCredentials] = useState({name: "", password: "",});
 
-    const handleNameChange = (e) => {
-        setName(e.target.value);
-        console.log(name);
-    }; 
-
-    const handlePasswordChange = (e) => {
-       setPassword(e.target.value);
-        console.log(name);
-    };
-
+    const handleOnChange = (e) => {
+        setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    }
 
     const handleSubmit = (e) => {
-        console.log(name);
-        console.log(password); 
+        console.log(credentials);
         navigate("/mainView");
     }
+    
   return (
     <div className="login_container">
         <div>
@@ -33,8 +24,8 @@ const Login = () => {
                 Login
             </div>
             <div className="input_container">
-                <Input type="text" placeholder="Name" value={name} onChange={handleNameChange}/>
-                <Input type="password" placeholder="Password" value={password} onChange={handlePasswordChange}/>  
+                <Input type="text" name="name" placeholder="Name" value={credentials?.name} onChange={handleOnChange}/>
+                <Input type="password" name="password" placeholder="Password" value={credentials?.password} onChange={handleOnChange}/>  
             </div>
             <div className="button_container">
                 <Button text={"Login"} onPress={handleSubmit}/>
