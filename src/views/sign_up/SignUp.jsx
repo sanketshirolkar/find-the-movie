@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import Button from '../../components/Button';
 import Input from '../../components/Input';
+import { useNavigate } from 'react-router-dom';
 import "./signup.css";
 
 const SignUp = () => {
@@ -9,25 +10,23 @@ const SignUp = () => {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState();
+    
+    const navigate = useNavigate();
 
     const handleNameChange = (e) => {
         setName(e.target.value);
-        console.log(name);
     }; 
 
     const handlePasswordChange = (e) => {
        setPassword(e.target.value);
-        console.log(name);
     };
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
-        console.log(name);
     };
 
     const handlePhoneNumberChange = (e) => {
         setPhoneNumber(e.target.value);
-        console.log(name);
     };
 
     
@@ -37,6 +36,7 @@ const SignUp = () => {
         console.log(password);
         console.log(email);
         console.log(phoneNumber);
+        navigate("/login");
     }
 
 
@@ -44,7 +44,7 @@ const SignUp = () => {
     <div className="signup_container">
         <div>
             <div className="title_container">
-                Sign Up
+                Sign_up
             </div>
             <div className="input_container">
                 <Input type="text" placeholder="Name" value={name} onChange={handleNameChange}/>
@@ -53,7 +53,7 @@ const SignUp = () => {
                 <Input type="tel" placeholder="Phone Number" value={phoneNumber} onChange={handlePhoneNumberChange}/>  
             </div>
             <div className="button_container">
-                <Button text={"Sign Up"} onPress={handleSubmit}/>
+                <Button text={"Sign_up"} onPress={handleSubmit}/>
             </div>
         </div>
     </div>
