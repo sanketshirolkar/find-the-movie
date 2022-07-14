@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
-import Button from '../../components/Button';
-import Input from '../../components/Input';
+import Button from '../../components/button/Button';
+import Input from '../../components/input/Input';
 import { useNavigate } from 'react-router-dom';
 import "./signup.css";
 
@@ -19,7 +19,7 @@ const SignUp = () => {
     }
     
     const handleSubmit = (e) => {
-        console.log(registerDetails);
+        localStorage.setItem("registerDetails",  JSON.stringify(registerDetails));
         navigate("/login");
     }
 

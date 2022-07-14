@@ -1,20 +1,25 @@
-import React,{useState} from "react";
-import Button from '../../components/Button';
-import Input from '../../components/Input';
+import React,{useState, useEffect} from "react";
+import Button from '../../components/button/Button';
+import Input from '../../components/input/Input';
 import { useNavigate } from 'react-router-dom';
 import "./login.css";
 
 const Login = () => {
     const navigate = useNavigate();
     const [credentials, setCredentials] = useState({name: "", password: "",});
+    const loginDetails = JSON.parse(localStorage.getItem("registerDetails"));
 
     const handleOnChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
     }
 
     const handleSubmit = (e) => {
-        console.log(credentials);
-        navigate("/mainView");
+
+        if(credentials?.name === loginDetails?.name && credentials?.password === loginDetails?.password){
+            navigate("/mainView");
+        }else {
+            alert("Invalid Credenntials");
+        }
     }
     
   return (
@@ -35,4 +40,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;
