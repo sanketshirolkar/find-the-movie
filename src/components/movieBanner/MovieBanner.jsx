@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from "react";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import axios from "axios";
 import "./movieBanner.css";
+
+
 
 const MovieBanner = () => {
 const [movieList, setMovieList] = useState([]);
@@ -26,13 +29,16 @@ useEffect(() => {
             <div className="movie_banner_container">
               <div className="left_side">
                 <div>
-                  Up Arrow
+                  <IoIosArrowUp />
                 </div>
                 <div>
-                  1
+                  {movies.totalVoted}
                 </div>
                 <div>
-                  Down Arrow
+                  <IoIosArrowDown />
+                </div>
+                <div>
+                  Votes
                 </div>
               </div>
 
@@ -41,17 +47,26 @@ useEffect(() => {
               </div> 
 
               <div className="right_side">
-                <div>
+                <div style={{fontWeight:"bold", fontSize:"22px"}}>
                   {movies.title}
                 </div>
                 <div>
-                  Genre: {movies.genre}
+                  <span style={{color:"grey", fontWeight:"bold", marginRight:"10px"}}>
+                    Genre: 
+                  </span>
+                  {movies.genre}
                 </div>
                 <div>
-                  Director: {movies.director}
+                  <span style={{color:"grey", fontWeight:"bold", marginRight:"10px"}}>
+                    Director: 
+                  </span>
+                   {movies.director}
                 </div>
                 <div>
-                  Starring: {movies.stars[0]}
+                  <span style={{color:"grey", fontWeight:"bold", marginRight:"10px"}}>
+                    Starring:  
+                  </span>
+                  {movies.stars[0]}
                 </div>
               </div> 
             </div>

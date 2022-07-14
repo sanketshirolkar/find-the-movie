@@ -26,20 +26,18 @@ const SignUp = () => {
 
   return (
     <div className="signup_container">
-        <div>
-            <div className="title_container">
-                Sign_up
-            </div>
             <div className="input_container">
-                <Input type="text" name="name" placeholder="Name" value={registerDetails?.name} onChange={handleOnChange}/>
-                <Input type="password" name="password" placeholder="Password" value={registerDetails?.password} onChange={handleOnChange}/>
-                <Input type="email" name="email" placeholder="E-Mail" value={registerDetails?.email} onChange={handleOnChange}/>
-                <Input type="tel" name="phoneNumber" placeholder="Phone Number" value={registerDetails?.phoneNumber} onChange={handleOnChange}/>  
+                <form>
+                    <div className="title_container">
+                        Signup
+                    </div>
+                    <Input type="text" name="name" placeholder="Name" value={registerDetails?.name} onChange={handleOnChange}/>
+                    <Input type="password" name="password" placeholder="Password" value={registerDetails?.password} onChange={handleOnChange}/>
+                    <Input type="email" name="email" placeholder="E-Mail" value={registerDetails?.email} onChange={handleOnChange} />
+                    <Input type="tel" name="phoneNumber" placeholder="Phone Number" value={registerDetails?.phoneNumber} onChange={handleOnChange}/>
+                    <button className="button_container" onClick={handleSubmit}>Sign Up</button>    
+                </form>
             </div>
-            <div className="button_container">
-                <Button text={"Sign_up"} onPress={handleSubmit}/>
-            </div>
-        </div>
     </div>
   )
 }

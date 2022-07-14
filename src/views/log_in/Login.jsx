@@ -24,17 +24,15 @@ const Login = () => {
     
   return (
     <div className="login_container">
-        <div>
-            <div className="title_container">
-                Login
-            </div>
-            <div className="input_container">
+        <div className="input_container">
+            <form>
+                <div className="title_container">
+                    Login
+                </div>
                 <Input type="text" name="name" placeholder="Name" value={credentials?.name} onChange={handleOnChange}/>
-                <Input type="password" name="password" placeholder="Password" value={credentials?.password} onChange={handleOnChange}/>  
-            </div>
-            <div className="button_container">
-                <Button text={"Login"} onPress={handleSubmit}/>
-            </div>
+                <Input type="password" name="password" placeholder="Password" value={credentials?.password} onChange={handleOnChange}/>
+                <button className="button_container" onClick={handleSubmit}>Sign Up</button>       
+            </form>
         </div>
     </div>
   )

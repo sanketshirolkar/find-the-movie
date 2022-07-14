@@ -1,7 +1,13 @@
+.formInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 280px;
+}
+
 input{
-    padding: 5px;
-    margin: 7px;
-    border: 0.1mm solid black;
-    background-color: white;
-    border-radius: 2px;
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid gray;
 }

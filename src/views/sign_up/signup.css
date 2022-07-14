@@ -1,19 +1,30 @@
 .signup_container{
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-size: cover;
     position: relative;
 }
 
 .input_container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    color: black;
+}
+
+form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center; 
+    background-color: transparent;
     padding: 0px 60px;
+    border-radius: 10px; 
 }
 
 .title_container{
@@ -22,12 +33,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 28px;
 }
 
 .button_container{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+    background-color: skyblue;
+    border:black;
     color: white;
     font-size: 22px;
     cursor: pointer;

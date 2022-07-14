@@ -3,7 +3,7 @@ import "./input.css";
 
 const Input = ({value, onChange, type, placeholder, name}) => {
   return (
-    <div>
+    <div className="formInput">
         <input 
             type={type}
             placeholder={placeholder}
