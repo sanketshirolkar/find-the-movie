@@ -19,8 +19,13 @@ const SignUp = () => {
     }
     
     const handleSubmit = (e) => {
-        localStorage.setItem("registerDetails",  JSON.stringify(registerDetails));
-        navigate("/login");
+        
+        if(registerDetails.name !== "" && registerDetails.password !== "" && registerDetails.email.includes("@" && ".com")){
+            localStorage.setItem("registerDetails",  JSON.stringify(registerDetails));
+            navigate("/login");
+        }else{
+            alert("Please enter valid details");
+        }
     }
 
 
