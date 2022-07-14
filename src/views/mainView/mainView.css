@@ -1,0 +1,8 @@
+.main_view{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    object-fit: contain;
+    height: 448px;
+}

@@ -1,0 +1,38 @@
+.movie_banner_container{
+    display: flex;
+    align-items: flex-start;
+}
+
+.tbd{
+    height: 240px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid grey;
+
+}
+
+.left_side{
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* .poster{
+
+    object-fit: contain;
+    width: 1000px;
+    max-height: 100px; 
+    margin-right: 10px;
+} */
+
+.right_side{
+    margin-left: 15px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
